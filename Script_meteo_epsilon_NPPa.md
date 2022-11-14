@@ -71,10 +71,10 @@ tabla1<-read.csv('prueba.csv')   #le asignamos el nombre tabla1
 tabla1$fecha<-dmy(tabla1$fecha)                  #le damos el formato dmy a la columna fecha
 tabla1<-merge(tabla1,fechas_quincenas,by='fecha')  #une tabla1.csv y fechas_quincenas.csv por la columna de fecha
 
-# ec. de presion de vapor en saturacion
+#ec. de presión de vapor en saturación.
 tabla1$es<-(0.611*exp((17.27*tabla1$TMed)/(237.3+tabla1$TMed)))*10 
 
-# ec. presion de vapor ambiental
+#ec. presión de vapor ambiental.
 tabla1$eamb<-tabla1$es*tabla1$HR/100
 
 #en kPa
